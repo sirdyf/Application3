@@ -311,11 +311,11 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.18</version>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 		   <groupId>org.vaadin.addons</groupId> -->
-<!-- 		   <artifactId>hbncontainer</artifactId> -->
-<!-- 		   <version>1.0.5</version> -->
-<!-- 		</dependency> -->
+		<dependency>
+		   <groupId>org.vaadin.addons</groupId>
+		   <artifactId>hbncontainer</artifactId>
+		   <version>1.0.5</version>
+		</dependency>
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-ehcache</artifactId>

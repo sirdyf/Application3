@@ -12,7 +12,8 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.transaction.annotation.Transactional;
 
 //import com.vaadin.data.hbnutil.HbnContainer;
-import dyf.mycompany.hbnContainer.*;
+//import dyf.mycompany.hbnContainer.*;
+import com.vaadin.data.hbnutil.HbnContainer;
 
 import dyf.mycompany.entity.MyEntity;
 

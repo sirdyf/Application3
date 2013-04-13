@@ -25,7 +25,7 @@
 <!--  hibernate -->
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-<property name="url" value="jdbc:mysql://127.0.0.1:3306/dyfbase" />
+<property name="url" value="jdbc:mysql://127.0.0.1:3306/mydb" />
 <property name="username" value="root" />
 <property name="password" value="dyf" />
 </bean>
@@ -112,6 +112,6 @@
         p:defaultLocale="en_US" />
         
 
-    <bean class="dyf.mycompany.util.VaadinApplicationObjectSupport" />
+<!--     <bean class="dyf.mycompany.util.VaadinApplicationObjectSupport" /> -->
 
 </beans>

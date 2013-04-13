@@ -6,9 +6,10 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import dyf.mycompany.hbnContainer.*;
+//import dyf.mycompany.hbnContainer.*;
+import com.vaadin.data.hbnutil.HbnContainer;
 
-public class MyManager implements hbnContainer.SessionManager{
+public class MyManager implements HbnContainer.SessionManager{
 //  	 @Autowired
 	 	 private SessionFactory sessionFactory;
 //	 	 public SessionFactory getSessionFactory() {

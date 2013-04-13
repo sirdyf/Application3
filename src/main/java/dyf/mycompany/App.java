@@ -28,8 +28,8 @@ import dyf.mycompany.services.MyEntityService;
 import dyf.mycompany.util.ApplicationHelper;
 import dyf.mycompany.util.BaseApplication;
 //import org.springframework.context.ApplicationContext;
-//import com.vaadin.data.hbnutil.HbnContainer;
-import dyf.mycompany.hbnContainer.*;
+import com.vaadin.data.hbnutil.HbnContainer;
+//import dyf.mycompany.hbnContainer.*;
 import com.vaadin.service.ApplicationContext;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.Window;
@@ -60,7 +60,7 @@ public class App extends BaseApplication
 	//EntityDao myDao;
 	@Autowired
 	private dyfForm myForm;
-	hbnContainer<MyEntity> c;//=new HbnContainer(MyEntity.class,null);
+	HbnContainer<MyEntity> c;//=new HbnContainer(MyEntity.class,null);
 //	void setmyForm(dyfForm df){
 //		myForm=df;
 //	}
@@ -108,7 +108,7 @@ public class App extends BaseApplication
 //    	HbnContainer<MyEntity> c=new HbnContainer<MyEntity>(MyEntity.class,myForm);
     	
     	//myForm.getserviceDYF2().saveEntity(entity);
-    	c=new hbnContainer<MyEntity>(MyEntity.class,myManager);
+    	c=new HbnContainer<MyEntity>(MyEntity.class,myManager);
     	if (c==null) {
     		System.err.println("container=null");
     	}else{
