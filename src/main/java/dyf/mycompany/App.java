@@ -38,6 +38,7 @@ import com.vaadin.ui.Label;
 /**
  * Hello world!
  */
+@SuppressWarnings("serial")
 @Configurable ( preConstruction = true  )
 @org.springframework.stereotype.Component ( value = "app" )
 public class App extends BaseApplication 
@@ -59,7 +60,7 @@ public class App extends BaseApplication
 	//HbnContainer.
 	//EntityDao myDao;
 	@Autowired
-	private dyfForm myForm;
+	private testForm myForm;
 	HbnContainer<MyEntity> c;//=new HbnContainer(MyEntity.class,null);
 //	void setmyForm(dyfForm df){
 //		myForm=df;

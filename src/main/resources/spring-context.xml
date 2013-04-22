@@ -85,7 +85,7 @@
 <bean id="entityService" class="dyf.mycompany.services.MyEntityService">
 <property name="dao" ref="entityDAO" />
 </bean>
-<bean id="myBean" class="dyf.mycompany.dyfForm">
+<bean id="myBean" class="dyf.mycompany.testForm">
 <property name="serviceDYF2" ref="entityService"/>
 </bean>
 <!-- <bean id="myBean2" class="dyf.mycompany.MyManager"> -->

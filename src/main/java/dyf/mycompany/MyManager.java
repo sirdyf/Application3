@@ -24,7 +24,7 @@ public class MyManager implements HbnContainer.SessionManager{
 		@Override
 		//@Transactional(readOnly = true)
 		public Session getSession() {
-			// TODO Auto-generated method stub
+// TODO Auto-generated method stub
 			//sessionFactory.openSession();
 			Session currentSession = sessionFactory.getCurrentSession();
 			

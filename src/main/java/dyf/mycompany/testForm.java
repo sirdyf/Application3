@@ -10,7 +10,7 @@ import com.vaadin.data.hbnutil.HbnContainer;
 
 import dyf.mycompany.services.IMyEntityService;
 
-public class dyfForm //implements hbnContainer.SessionManager
+public class testForm
 {
 	@Autowired
 	//public IMyEntityService serviceDYF;
