@@ -8,10 +8,10 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>6.7.4</vaadin.version>
+		<vaadin.version>7.0.4</vaadin.version>
 		<aspectj.version>1.6.3</aspectj.version>
-		<servlet.version>2.0</servlet.version>
-		<servlet-api.version>2.5</servlet-api.version>
+		<servlet.version>3.0</servlet.version>
+		<servlet-api.version>3.0</servlet-api.version>
 		<jstl.version>1.2</jstl.version>
 		<hsqldb.version>1.8.0.9</hsqldb.version>
 		<javax.persistence.version>1.0.0</javax.persistence.version>
@@ -29,7 +29,8 @@
 		<aspectj-maven-plugin.version>1.0</aspectj-maven-plugin.version>
 		<hibernate-entitymanager.version>3.6.3.Final</hibernate-entitymanager.version>
 		<spring.version>3.1.1.RELEASE</spring.version>
-		<hibernate-core.version>3.6.3.Final</hibernate-core.version>
+<!-- 		<hibernate-core.version>3.6.3.Final</hibernate-core.version> -->
+		<hibernate-core.version>4.0.1.Final</hibernate-core.version>
 	</properties>
 
 	<build>
@@ -117,6 +118,11 @@
 	</profiles>
 	<repositories>
 		<repository>
+		    <id>vaadin7</id>
+		        <name>In Project Repo</name>
+		        <url>file://${project.basedir}/lib</url>
+		</repository>	
+		<repository>
 			<id>vaadin-addons</id>
 			<url>http://maven.vaadin.com/vaadin-addons</url>
 		</repository>
@@ -135,26 +141,25 @@
 			<name>SpringSource Enterprise Bundle Repository - External Bundle Milestones</name>
 			<url>http://repository.springsource.com/maven/bundles/milestone</url>
 		</repository>
-		<repository>
-   <id>vaadin-addons</id>
-   <url>http://maven.vaadin.com/vaadin-addons</url>
-</repository>
 
 	</repositories>
 
 	<dependencies>
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
-            <version>6.0</version>
-            <scope>provided</scope>
-        </dependency>
+<!--         <dependency> -->
+<!--             <groupId>javax</groupId> -->
+<!--             <artifactId>javaee-web-api</artifactId> -->
+<!--             <version>6.0</version> -->
+<!--             <scope>provided</scope> -->
+<!--         </dependency> -->
     		<!-- Vaadin dependencies -->
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin</artifactId>
-			<version>${vaadin.version}</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.vaadin</groupId> -->
+<!-- 			<artifactId>vaadin</artifactId> -->
+<!-- 			<version>${vaadin.version}</version> -->
+<!-- 			<systemPath>${project.basedir}\src\main\webapp\WEB-INF\lib\jasen-4.0.jar</systemPath> -->
+<!-- 			<systemPath>${project.basedir}\lib\vaadin-server-7.0.4.jar</systemPath> -->
+<!-- 			<scope>system</scope> -->
+<!-- 		</dependency> -->
 
 		<!-- Aspectj dependencies -->
 		<dependency>
@@ -284,23 +289,32 @@
 
 		<!-- default j2ee dependencies -->
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>${servlet.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>${servlet-api.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>${jstl.version}</version>
-			<scope>runtime</scope>
-		</dependency>
+    <groupId>javax</groupId>
+    <artifactId>javaee-web-api</artifactId>
+    <version>6.0</version>
+    <scope>provided</scope>
+  </dependency>
+<!--   http://stackoverflow.com/questions/1979957/maven-dependency-for-servlet-3-0-api -->
+<!-- This jar includes Servlet 3.0, EJB Lite 3.1, JPA 2.0, JSP 2.2, EL 1.2, JSTL 1.2, JSF 2.0, JTA 1.1, JSR-45, JSR-250. -->
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>javax.servlet</groupId> -->
+<!-- 			<artifactId>jsp-api</artifactId> -->
+<!-- 			<version>${servlet.version}</version> -->
+<!-- 			<scope>provided</scope> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>javax.servlet</groupId> -->
+<!-- 			<artifactId>servlet-api</artifactId> -->
+<!-- 			<version>${servlet-api.version}</version> -->
+<!-- 			<scope>provided</scope> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>javax.servlet</groupId> -->
+<!-- 			<artifactId>jstl</artifactId> -->
+<!-- 			<version>${jstl.version}</version> -->
+<!-- 			<scope>runtime</scope> -->
+<!-- 		</dependency> -->
 
 		<!-- Test dependencies -->
 		<dependency>
@@ -312,9 +326,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-
-			<version>3.6.3.Final</version>
-			<!-- <version>${hibernate-core.version}</version> -->
+			<version>${hibernate-core.version}</version>
 		</dependency>
 		<!-- <dependency> -->
 		<!-- <groupId>org.hibernate</groupId> -->

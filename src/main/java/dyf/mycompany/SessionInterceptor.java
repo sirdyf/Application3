@@ -1,5 +1,8 @@
 package dyf.mycompany;
 
+import java.io.IOException;
+
+import javax.servlet.DispatcherType;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -7,9 +10,16 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+//import javax.servlet.annotation.*;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-@WebFilter(urlPatterns = { "/*" }, dispatcherTypes = { DispatcherType.REQUEST, DispatcherType.FORWARD, DispatcherType.INCLUDE, DispatcherType.ERROR })
+import org.hibernate.Session;
+import org.hibernate.StaleObjectStateException;
+
+import com.vaadin.data.hbnutil.ApplicationLogger;
+
+@WebFilter(dispatcherTypes = { DispatcherType.REQUEST, DispatcherType.FORWARD, DispatcherType.INCLUDE, DispatcherType.ERROR },urlPatterns = { "/*" })
 public class SessionInterceptor implements Filter
 {
 private static final ApplicationLogger logger = new ApplicationLogger(SessionInterceptor.class);
@@ -66,4 +76,5 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 		
 		throw new ServletException(e);
 	}
+}
 }
