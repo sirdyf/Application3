@@ -25,9 +25,9 @@ import com.vaadin.ui.VerticalLayout;
  * Hello world!
  */
 
-@SuppressWarnings("serial")
+
 @Theme("mytheme")
-public class App extends UI {
+public class dyfApplication extends UI {
 
     @Override
     protected void init(VaadinRequest request) {
