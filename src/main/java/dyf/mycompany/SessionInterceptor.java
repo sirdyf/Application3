@@ -24,13 +24,12 @@ public class SessionInterceptor implements Filter
 {
 private static final ApplicationLogger logger = new ApplicationLogger(SessionInterceptor.class);
 
-@Override
 public void init(FilterConfig filterConfig) throws ServletException
 {
 	logger.executionTrace();
 }
 
-@Override
+
 public void destroy()
 {
 	logger.executionTrace();
@@ -43,7 +42,7 @@ public void destroy()
 		session.close();
 }
 
-@Override
+
 public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException
 {
 	final Session session = DatabaseUtil.getSessionFactory().getCurrentSession();

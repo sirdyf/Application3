@@ -13,11 +13,13 @@
  */
 package dyf.mycompany;
 
-import com.vaadin.annotations.Theme;
 import com.vaadin.server.VaadinRequest;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+
 //import org.springframework.context.ApplicationContext;
 //import dyf.mycompany.hbnContainer.*;
 
@@ -26,13 +28,14 @@ import com.vaadin.ui.VerticalLayout;
  */
 
 
-@Theme("mytheme")
+
+@SuppressWarnings("serial")
 public class dyfApplication extends UI {
 
     @Override
     protected void init(VaadinRequest request) {
         VerticalLayout view = new VerticalLayout();
-        view.addComponent(new Label("Hello Vaadin!"));
+        view.addComponent(new Label("Hello Vaadin! !"));
         setContent(view);
     }
 

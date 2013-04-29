@@ -15,7 +15,7 @@ public class MyEntityService implements IMyEntityService
     {
         this.dao = dao;
     }
-    @Override
+
     public IEntityDao getDao(){
 		if (dao==null){
 			System.err.println("dao=null");
@@ -24,7 +24,7 @@ public class MyEntityService implements IMyEntityService
 		}
     	return this.dao;
     }
-    @Override
+
     @Transactional(readOnly = false, propagation = Propagation.REQUIRED)
     public void saveEntity(MyEntity entity)
     {

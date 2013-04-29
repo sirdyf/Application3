@@ -36,7 +36,7 @@ public class EntityDao extends HibernateDaoSupport implements IEntityDao{
 //	 	 public void setSessionFactory(SessionFactory sessionFactory) {
 //	 	 this.sessionFactory = sessionFactory;
 //	 	 }
-	 @Override
+	 
 	 @Transactional(readOnly = false)
     public void save(MyEntity entity)
     {
