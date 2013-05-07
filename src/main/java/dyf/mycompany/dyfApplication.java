@@ -13,12 +13,18 @@
  */
 package dyf.mycompany;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.vaadin.data.hbnutil.HbnContainer;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Table;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+
+import dyf.mycompany.entity.MyEntity;
 
 //import org.springframework.context.ApplicationContext;
 //import dyf.mycompany.hbnContainer.*;
@@ -31,11 +37,33 @@ import com.vaadin.ui.VerticalLayout;
 
 @SuppressWarnings("serial")
 public class dyfApplication extends UI {
+	Table table;
+	MyEntity entity;
+	//HbnContainer.
+	//EntityDao myDao;
+	@Autowired
+	private testForm myForm;
+	HbnContainer<MyEntity> c;
 
     @Override
     protected void init(VaadinRequest request) {
+//        entity = new MyEntity();
+//        entity.setName("Dima4");
+//        myForm.getserviceDYF2().saveEntity(entity);
+    	System.err.println("Init...");
+    	table=new Table("my table");
+    	c=new HbnContainer<MyEntity>(MyEntity.class, DatabaseUtil.getSessionFactory());
+    	if (c==null) {
+    		System.err.println("container=null");
+    	}else{
+    		System.err.println("container ok");
+    		
+    	}
+table.setContainerDataSource(c);//serviceDYF.getDao().getSessionFactory().getCurrentSession()));
+
         VerticalLayout view = new VerticalLayout();
         view.addComponent(new Label("Hello Vaadin! !"));
+        view.addComponent(table);
         setContent(view);
     }
 
